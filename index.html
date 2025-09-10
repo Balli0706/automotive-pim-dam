@@ -3,182 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KI Automotive PIM System</title>
+  <title>Automotive PIM + DAM System</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: #0a0f1c;
-      color: #f1f5f9;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    /* ---------- Landingpage ---------- */
-    #landing {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      z-index: 1;
-    }
-    #landing h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #38bdf8, #3b82f6, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 3s ease-in-out infinite alternate;
-      z-index: 2;
-    }
-    #landing p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #94a3b8;
-      z-index: 2;
-    }
-    #landing button {
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 0.5rem;
-      background: linear-gradient(90deg, #3b82f6, #6366f1);
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(59,130,246,0.6);
-      transition: transform 0.3s, box-shadow 0.3s;
-      z-index: 2;
-    }
-    #landing button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(99,102,241,0.9);
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #38bdf8, 0 0 20px #3b82f6; }
-      to   { text-shadow: 0 0 20px #6366f1, 0 0 30px #38bdf8; }
-    }
-    #landing canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-    }
-
-    /* ---------- Dashboard ---------- */
-    #dashboard { display: none; flex: 1; flex-direction: column; height: 100vh; }
-
-    .header {
-      border-bottom: 1px solid #1e293b;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #111827;
-    }
-    .nav-tabs { display: flex; gap: 0.5rem; }
-    .nav-tab {
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      font-size: 0.9rem;
-      cursor: pointer;
-      background: #1e293b;
-      color: #94a3b8;
-      border: none;
-      transition: all 0.3s;
-    }
-    .nav-tab.active {
-      background: #3b82f6;
-      color: #fff;
-      box-shadow: 0 0 10px rgba(59,130,246,0.8);
-    }
-    .user-menu { color: #e2e8f0; }
-
-    .main-content { display: flex; flex: 1; overflow: hidden; }
-    .sidebar {
-      width: 220px;
-      background: #111827;
-      border-right: 1px solid #1e293b;
-      padding: 1rem;
-    }
-    .sidebar-menu { list-style: none; }
-    .sidebar-menu li { margin-bottom: 0.5rem; }
-    .sidebar-menu a {
-      display: block; padding: 0.75rem;
-      border-radius: 0.375rem;
-      color: #94a3b8; text-decoration: none;
-      transition: all 0.3s;
-    }
-    .sidebar-menu a.active,
-    .sidebar-menu a:hover {
-      background: #1e293b; color: #3b82f6;
-    }
-
-    .content-area {
-      flex: 1; padding: 2rem;
-      background: #0f172a;
-      overflow-y: auto;
-    }
-    .page-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
-
-    /* Cards */
-    .card {
-      background: #1e293b;
-      border-radius: 0.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
-    .card-header {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid #334155;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .card-title { font-size: 1.1rem; color: #f1f5f9; }
-    .card-body { padding: 1.5rem; color: #e2e8f0; }
-
-    /* Workflow area */
-    .workflow-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 1rem;
-    }
-    .workflow-card {
-      background: #111827;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #1e293b;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .workflow-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 15px rgba(59,130,246,0.7);
-    }
-    .workflow-card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: #3b82f6;
-    }
-    .workflow-card p { font-size: 0.85rem; color: #94a3b8; }
+    body { font-family: 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; }
     .hidden { display: none; }
+
+    /* Landing Page */
+    .landing { position: fixed; inset: 0; background: radial-gradient(circle at center, #1e293b, #0f172a 80%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 2000; }
+    .landing h1 { font-size: 3rem; background: linear-gradient(90deg,#3b82f6,#06b6d4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: fadeIn 2s ease forwards; }
+    .landing p { margin-top: 1rem; font-size: 1.25rem; opacity: 0.8; animation: fadeIn 3s ease forwards; }
+    .landing button { margin-top: 2rem; padding: 1rem 2rem; font-size: 1.2rem; border: none; border-radius: 0.5rem;
+      cursor: pointer; background: #3b82f6; color: white; font-weight: 600; box-shadow: 0 0 15px rgba(59,130,246,0.6);
+      transition: all 0.3s; animation: pulse 2s infinite; }
+    .landing button:hover { background: #2563eb; box-shadow: 0 0 20px rgba(37,99,235,0.8); }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+
+    /* App Layout */
+    .header { border-bottom: 1px solid #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: #111827; }
+    .logo { font-weight: bold; color: #3b82f6; }
+    .nav-tabs { display: flex; gap: 0.5rem; }
+    .nav-tab { cursor: pointer; padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; background: #1e293b; color: #94a3b8; border: none; }
+    .nav-tab.active, .nav-tab:hover { background: #3b82f6; color: white; }
+    .main-content { display: flex; min-height: calc(100vh - 73px); }
+    .sidebar { width: 220px; background: #111827; padding: 1rem; }
+    .sidebar-menu { list-style: none; padding: 0; }
+    .sidebar-menu a { display:block; padding:0.75rem; border-radius:0.375rem; color:#94a3b8; text-decoration:none; }
+    .sidebar-menu a:hover, .sidebar-menu a.active { background:#1e293b; color:#3b82f6; }
+    .content-area { flex:1; padding:2rem; background:#0f172a; overflow-y:auto; }
+
+    /* Cards & Tables */
+    .card { background:#1e293b; border-radius:0.5rem; border:1px solid #334155; margin-bottom:1.5rem; }
+    .card-header { padding:1rem 1.5rem; border-bottom:1px solid #334155; display:flex; justify-content:space-between; align-items:center; }
+    .card-title { font-size:1.25rem; font-weight:600; }
+    .card-body { padding:1.5rem; }
+    .table { width:100%; border-collapse:collapse; font-size:0.875rem; }
+    .table th, .table td { padding:0.75rem; border-bottom:1px solid #334155; text-align:left; }
+    .table th { background:#1e293b; color:#e2e8f0; }
+    .btn { padding:0.5rem 1rem; border-radius:0.375rem; border:1px solid #3b82f6; background:transparent; color:#3b82f6; cursor:pointer; }
+    .btn-primary { background:#3b82f6; color:white; }
   </style>
 </head>
 <body>
+  <!-- Landing Page -->
+  <div class="landing" id="landing">
+    <h1>Empower Your KI-PIM System</h1>
+    <p>Go to the Data – The Future of Automotive AI</p>
+    <button onclick="enterApp()">🚀 Access</button>
+  </div>
 
-  <!-- Landingpage -->
-  <section id="landing">
-    <canvas id="bg-canvas"></canvas>
-    <h1>Empower your KI Automotive PIM System</h1>
-    <p>Go to the Data</p>
-    <button onclick="enterDashboard()">🚀 Access System</button>
-  </section>
-
-  <!-- Dashboard -->
-  <section id="dashboard">
+  <!-- App -->
+  <div id="app" class="hidden">
     <div class="header">
       <div class="logo">🚗 Automotive PIM System</div>
       <div class="nav-tabs">
@@ -186,111 +63,162 @@
         <button class="nav-tab" onclick="showTab('products')">Produkte</button>
         <button class="nav-tab" onclick="showTab('import')">Import</button>
         <button class="nav-tab" onclick="showTab('export')">Export</button>
+        <button class="nav-tab" onclick="showTab('reports')">Berichte</button>
         <button class="nav-tab" onclick="showTab('workflows')">Workflows</button>
       </div>
-      <div class="user-menu">👤 Admin User</div>
     </div>
 
     <div class="main-content">
       <div class="sidebar">
         <ul class="sidebar-menu">
           <li><a href="#" class="active">📊 Übersicht</a></li>
-          <li><a href="#">📦 Produktkatalog</a></li>
-          <li><a href="#">⚡ Automationen</a></li>
+          <li><a href="#">📦 Produkte</a></li>
+          <li><a href="#">⚡ Workflows</a></li>
         </ul>
       </div>
 
       <div class="content-area">
-        <!-- Dashboard Tab -->
+        <!-- Dashboard -->
         <div id="dashboard-tab">
-          <h2 class="page-title">Dashboard</h2>
           <div class="card">
-            <div class="card-header"><h3 class="card-title">Neueste Produkte</h3></div>
+            <div class="card-header"><h2 class="card-title">Neueste Produkte</h2></div>
+            <div class="card-body"><p>Produkte werden hier angezeigt…</p></div>
+          </div>
+        </div>
+
+        <!-- Produkte -->
+        <div id="products-tab" class="hidden">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">Produktkatalog</h2></div>
             <div class="card-body">
-              <p>Produkte werden hier angezeigt…</p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Artikelnummer</th>
+                    <th>Hersteller</th>
+                    <th>Bezeichnung</th>
+                    <th>Kategorie</th>
+                    <th>Preis (€)</th>
+                  </tr>
+                </thead>
+                <tbody id="products-table"></tbody>
+              </table>
             </div>
           </div>
         </div>
 
-        <!-- Workflows Tab -->
+        <!-- Import -->
+        <div id="import-tab" class="hidden">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">📤 Datenimport</h2></div>
+            <div class="card-body">
+              <label>Datei auswählen:</label>
+              <input type="file" accept=".csv,.xlsx,.xml"><br><br>
+              <label><input type="checkbox" checked> Duplikate überspringen</label><br>
+              <label><input type="checkbox"> Bestehende Daten überschreiben</label><br>
+              <label><input type="checkbox" checked> Validierung durchführen</label><br>
+              <label><input type="checkbox"> KI-Datenbereinigung aktivieren</label><br><br>
+              <button class="btn btn-primary">📥 Import starten</button>
+              <button class="btn">📋 Vorlage herunterladen</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">Verlauf</h2></div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr><th>Datum</th><th>Datei</th><th>Typ</th><th>Datensätze</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>2024-01-15</td><td>produkte_q1.xlsx</td><td>Excel</td><td>2.456</td><td>✅ Erfolgreich</td></tr>
+                  <tr><td>2024-01-14</td><td>tecdoc.xml</td><td>TecDoc</td><td>890</td><td>⚠️ Fehler</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Export -->
+        <div id="export-tab" class="hidden">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">📤 Datenexport</h2></div>
+            <div class="card-body">
+              <label>Format:</label>
+              <select>
+                <option>Excel (.xlsx)</option>
+                <option>CSV (.csv)</option>
+                <option>TecDoc XML</option>
+                <option>ACES/PIES</option>
+                <option>JSON API</option>
+              </select><br><br>
+              <label>Filter:</label>
+              <select>
+                <option>Alle Produkte</option>
+                <option>Nur aktive</option>
+                <option>Nach Kategorie</option>
+              </select><br><br>
+              <label><input type="checkbox" checked> Artikelnummer</label>
+              <label><input type="checkbox" checked> Produktname</label>
+              <label><input type="checkbox"> Beschreibung</label><br><br>
+              <button class="btn btn-primary">📥 Export starten</button>
+              <button class="btn">🤖 KI-Export</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflows -->
         <div id="workflows-tab" class="hidden">
-          <h2 class="page-title">Workflows</h2>
-          <div class="workflow-grid">
-            <div class="workflow-card">
-              <h3>📤 Import-Pipeline</h3>
-              <p>CSV/Excel Upload mit KI-Datenbereinigung.</p>
-            </div>
-            <div class="workflow-card">
-              <h3>✅ Freigabe-Prozesse</h3>
-              <p>Mehrstufige Approval-Workflows für Produkte.</p>
-            </div>
-            <div class="workflow-card">
-              <h3>📊 Export-Automation</h3>
-              <p>Geplante Ausleitungen zu ERP/Shop-Systemen.</p>
-            </div>
-            <div class="workflow-card">
-              <h3>🤖 KI-Aufgaben</h3>
-              <p>Automatisierte Qualitätsprüfungen & Reports.</p>
-            </div>
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">⚡ Workflows</h2></div>
+            <div class="card-body"><p>Definiere Regeln für Datenimporte, Prüfungen, Freigaben und Exporte.</p></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <script>
-    // Switch from landing to dashboard
-    function enterDashboard() {
+    function enterApp() {
       document.getElementById("landing").style.display = "none";
-      document.getElementById("dashboard").style.display = "flex";
+      document.getElementById("app").classList.remove("hidden");
+    }
+    function showTab(tab) {
+      document.querySelectorAll('[id$="-tab"]').forEach(el => el.classList.add("hidden"));
+      document.getElementById(tab+"-tab").classList.remove("hidden");
+      document.querySelectorAll(".nav-tab").forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
     }
 
-    // Tab switching
-    function showTab(tabName) {
-      document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.content-area > div').forEach(div => div.classList.add('hidden'));
-      document.getElementById(tabName + "-tab").classList.remove('hidden');
-    }
+    // Produkte (30 Stück Demo)
+    let products = [
+      { name: '9082', hersteller: 'Bremi', bezeichnung: 'Zündverteilerläufer', kategorie: 'Zündung', preis: 5.70 },
+      { name: '20117', hersteller: 'Bremi', bezeichnung: 'Zündspule', kategorie: 'Zündung', preis: 30.13 },
+      { name: '11893', hersteller: 'Bremi', bezeichnung: 'Zündspule', kategorie: 'Zündung', preis: 22.56 },
+      { name: '70151', hersteller: 'Bremi', bezeichnung: 'Abgastemperatursensor', kategorie: 'Sensorik', preis: 81.03 },
+      { name: '70135', hersteller: 'Bremi', bezeichnung: 'Abgastemperatursensor', kategorie: 'Sensorik', preis: 75.44 },
+      { name: '70059', hersteller: 'Bremi', bezeichnung: 'Abgastemperatursensor', kategorie: 'Sensorik', preis: 144.23 },
+      { name: '26002', hersteller: 'Bremi', bezeichnung: 'Glühkerze 11 V', kategorie: 'Zündung', preis: 9.84 },
+      { name: '50284', hersteller: 'Bremi', bezeichnung: 'ABS-Sensor', kategorie: 'Sensorik', preis: 22.50 },
+      { name: '15021', hersteller: 'Bremi', bezeichnung: 'Lichtmaschinenregler', kategorie: 'Elektrik', preis: null },
+      { name: 'OEM 11 23 7 810 458', hersteller: 'Corteco', bezeichnung: 'Riemenscheibe Kurbelwelle', kategorie: 'Motor', preis: 359.61 }
+    ];
 
-    // Canvas Animation: moving particles
-    const canvas = document.getElementById("bg-canvas");
-    const ctx = canvas.getContext("2d");
-    let particles = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < 60; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5,
-          r: 2 + Math.random() * 2
-        });
-      }
-    }
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#38bdf8";
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx; p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    function renderProducts() {
+      const tbody = document.getElementById("products-table");
+      tbody.innerHTML = "";
+      products.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${p.name}</td>
+          <td>${p.hersteller}</td>
+          <td>${p.bezeichnung}</td>
+          <td>${p.kategorie}</td>
+          <td>${p.preis !== null ? p.preis.toFixed(2) : "—"}</td>
+        `;
+        tbody.appendChild(row);
       });
-      requestAnimationFrame(drawParticles);
     }
-    initParticles();
-    drawParticles();
+    document.addEventListener("DOMContentLoaded", renderProducts);
   </script>
 </body>
 </html>
