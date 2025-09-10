@@ -20,7 +20,1172 @@
             align-items: center;
             justify-content: center;
         }
-        
+                       border-bottom: 1px solid #e2e8f0;
+       24                padding: 1rem 2rem;
+       25                display: flex;
+       26 -              justify-content: between;
+       26 +              justify-content: space-between;
+       27                align-items: center;
+       28                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+       29            }
+     ...
+       40            .nav-tabs {
+       41                display: flex;
+       42                gap: 0.5rem;
+       43 -              margin-left: 2rem;
+       43            }
+       44            
+       45            .nav-tab {
+     ...
+       50                cursor: pointer;
+       51                border-radius: 0.375rem;
+       52                transition: all 0.2s;
+       53 +              font-size: 0.875rem;
+       54            }
+       55            
+       56            .nav-tab.active {
+     ...
+       61                background: #f1f5f9;
+       62            }
+       63            
+       64 +          .user-menu {
+       65 +              display: flex;
+       66 +              align-items: center;
+       67 +              gap: 1rem;
+       68 +          }
+       69 +          
+       70            .main-content {
+       71                display: flex;
+       72                min-height: calc(100vh - 73px);
+     ...
+         73                padding: 1.5rem;
+         74            }
+         75            
+         76 -          .content-area {
+         77 -              flex: 1;
+         78 -              padding: 2rem;
+         76 +          .sidebar-menu {
+         77 +              list-style: none;
+         78            }
+         79            
+         80 -          .hero {
+         81 -              margin-bottom: 3rem;
+         80 +          .sidebar-menu li {
+         81 +              margin-bottom: 0.5rem;
+         82            }
+         83            
+         84 -          .logo {
+         85 -              font-size: 3rem;
+         86 -              margin-bottom: 1rem;
+         84 +          .sidebar-menu a {
+         85 +              display: block;
+         86 +              padding: 0.75rem;
+         87 +              color: #64748b;
+         88 +              text-decoration: none;
+         89 +              border-radius: 0.375rem;
+         90 +              transition: all 0.2s;
+         91            }
+         92            
+         93 -          h1 {
+         94 -              font-size: 3.5rem;
+         95 -              margin-bottom: 1rem;
+         96 -              background: linear-gradient(45deg, #fbbf24, #f59e0b);
+         97 -              -webkit-background-clip: text;
+         98 -              -webkit-text-fill-color: transparent;
+         93 +          .sidebar-menu a:hover,
+         94 +          .sidebar-menu a.active {
+         95 +              background: #f1f5f9;
+         96 +              color: #3b82f6;
+         97            }
+         98            
+         99 -          .subtitle {
+        100 -              font-size: 1.5rem;
+        101 -              opacity: 0.9;
+        102 -              margin-bottom: 2rem;
+         99 +          .content-area {
+        100 +              flex: 1;
+        101 +              padding: 2rem;
+        102 +              overflow-y: auto;
+        103            }
+        104            
+        105 -          .features {
+        106 -              display: grid;
+        107 -              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        108 -              gap: 2rem;
+        109 -              margin: 3rem 0;
+        105 +          .page-header {
+        106 +              display: flex;
+        107 +              justify-content: space-between;
+        108 +              align-items: center;
+        109 +              margin-bottom: 2rem;
+        110            }
+        111            
+        112 -          .feature-card {
+        113 -              background: rgba(255, 255, 255, 0.1);
+        114 -              backdrop-filter: blur(10px);
+        115 -              border-radius: 1rem;
+        116 -              padding: 2rem;
+        117 -              border: 1px solid rgba(255, 255, 255, 0.2);
+        118 -              transition: transform 0.3s ease;
+        112 +          .page-title {
+        113 +              font-size: 1.875rem;
+        114 +              font-weight: 700;
+        115            }
+        116            
+        117 -          .feature-card:hover {
+        118 -              transform: translateY(-5px);
+        117 +          .card {
+        118 +              background: white;
+        119 +              border-radius: 0.5rem;
+        120 +              border: 1px solid #e2e8f0;
+        121 +              box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        122 +              margin-bottom: 1.5rem;
+        123            }
+        124            
+        125 -          .feature-icon {
+        126 -              font-size: 2.5rem;
+        127 -              margin-bottom: 1rem;
+        125 +          .card-header {
+        126 +              padding: 1.5rem;
+        127 +              border-bottom: 1px solid #e2e8f0;
+        128 +              display: flex;
+        129 +              justify-content: space-between;
+        130 +              align-items: center;
+        131            }
+        132            
+        133 -          .feature-title {
+        134 -              font-size: 1.5rem;
+        135 -              margin-bottom: 1rem;
+        136 -              color: #fbbf24;
+        133 +          .card-title {
+        134 +              font-size: 1.125rem;
+        135 +              font-weight: 600;
+        136            }
+        137            
+        138 -          .tech-stack {
+        139 -              margin: 3rem 0;
+        138 +          .card-body {
+        139 +              padding: 1.5rem;
+        140            }
+        141            
+        142 -          .tech-grid {
+        142 +          .stats-grid {
+        143                display: grid;
+        144                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        145                gap: 1rem;
+        146 -              margin-top: 2rem;
+        146 +              margin-bottom: 2rem;
+        147            }
+        148            
+        149 -          .tech-item {
+        150 -              background: rgba(255, 255, 255, 0.1);
+        151 -              padding: 1rem;
+        149 +          .stat-card {
+        150 +              background: white;
+        151 +              padding: 1.5rem;
+        152                border-radius: 0.5rem;
+        153 -              border: 1px solid rgba(255, 255, 255, 0.2);
+        153 +              border: 1px solid #e2e8f0;
+        154 +              text-align: center;
+        155 +              box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        156            }
+        157            
+        158 -          .status {
+        159 -              background: rgba(34, 197, 94, 0.2);
+        160 -              border: 1px solid #22c55e;
+        161 -              border-radius: 2rem;
+        162 -              padding: 0.5rem 1.5rem;
+        163 -              display: inline-block;
+        164 -              margin: 2rem 0;
+        165 -              color: #22c55e;
+        166 -              font-weight: 600;
+        158 +          .stat-number {
+        159 +              font-size: 2rem;
+        160 +              font-weight: 700;
+        161 +              color: #3b82f6;
+        162            }
+        163            
+        164 -          .github-link {
+        164 +          .stat-label {
+        165 +              color: #64748b;
+        166 +              font-size: 0.875rem;
+        167 +              margin-top: 0.5rem;
+        168 +          }
+        169 +          
+        170 +          .btn {
+        171 +              padding: 0.5rem 1rem;
+        172 +              border: 1px solid #d1d5db;
+        173 +              border-radius: 0.375rem;
+        174 +              background: white;
+        175 +              cursor: pointer;
+        176 +              transition: all 0.2s;
+        177 +              text-decoration: none;
+        178                display: inline-block;
+        179 -              background: #24292e;
+        179 +              font-size: 0.875rem;
+        180 +              font-weight: 500;
+        181 +          }
+        182 +          
+        183 +          .btn-primary {
+        184 +              background: #3b82f6;
+        185                color: white;
+        186 -              padding: 1rem 2rem;
+        187 -              border-radius: 0.5rem;
+        188 -              text-decoration: none;
+        186 +              border-color: #3b82f6;
+        187 +          }
+        188 +          
+        189 +          .btn-primary:hover {
+        190 +              background: #2563eb;
+        191 +          }
+        192 +          
+        193 +          .btn-success {
+        194 +              background: #10b981;
+        195 +              color: white;
+        196 +              border-color: #10b981;
+        197 +          }
+        198 +          
+        199 +          .btn:hover {
+        200 +              background: #f9fafb;
+        201 +          }
+        202 +          
+        203 +          .btn-sm {
+        204 +              padding: 0.25rem 0.5rem;
+        205 +              font-size: 0.75rem;
+        206 +          }
+        207 +          
+        208 +          .form-group {
+        209 +              margin-bottom: 1rem;
+        210 +          }
+        211 +          
+        212 +          .form-label {
+        213 +              display: block;
+        214 +              margin-bottom: 0.5rem;
+        215 +              font-weight: 500;
+        216 +              font-size: 0.875rem;
+        217 +          }
+        218 +          
+        219 +          .form-input {
+        220 +              width: 100%;
+        221 +              padding: 0.5rem;
+        222 +              border: 1px solid #d1d5db;
+        223 +              border-radius: 0.375rem;
+        224 +              font-size: 0.875rem;
+        225 +          }
+        226 +          
+        227 +          .form-input:focus {
+        228 +              outline: none;
+        229 +              border-color: #3b82f6;
+        230 +              box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        231 +          }
+        232 +          
+        233 +          .form-select {
+        234 +              width: 100%;
+        235 +              padding: 0.5rem;
+        236 +              border: 1px solid #d1d5db;
+        237 +              border-radius: 0.375rem;
+        238 +              background: white;
+        239 +              font-size: 0.875rem;
+        240 +          }
+        241 +          
+        242 +          .table {
+        243 +              width: 100%;
+        244 +              border-collapse: collapse;
+        245 +              font-size: 0.875rem;
+        246 +          }
+        247 +          
+        248 +          .table th,
+        249 +          .table td {
+        250 +              padding: 0.75rem;
+        251 +              text-align: left;
+        252 +              border-bottom: 1px solid #e2e8f0;
+        253 +          }
+        254 +          
+        255 +          .table th {
+        256                font-weight: 600;
+        257 -              margin: 1rem;
+        258 -              transition: background 0.3s ease;
+        257 +              background: #f8fafc;
+        258 +              color: #374151;
+        259            }
+        260            
+        261 -          .github-link:hover {
+        262 -              background: #2f363d;
+        261 +          .table tbody tr:hover {
+        262 +              background: #f8fafc;
+        263            }
+        264            
+        265 -          .demo-link {
+        266 -              display: inline-block;
+        267 -              background: linear-gradient(45deg, #fbbf24, #f59e0b);
+        268 -              color: #1e3a8a;
+        269 -              padding: 1rem 2rem;
+        265 +          .badge {
+        266 +              padding: 0.25rem 0.5rem;
+        267 +              border-radius: 0.25rem;
+        268 +              font-size: 0.75rem;
+        269 +              font-weight: 500;
+        270 +          }
+        271 +          
+        272 +          .badge-success {
+        273 +              background: #dcfce7;
+        274 +              color: #166534;
+        275 +          }
+        276 +          
+        277 +          .badge-warning {
+        278 +              background: #fef3c7;
+        279 +              color: #92400e;
+        280 +          }
+        281 +          
+        282 +          .badge-danger {
+        283 +              background: #fee2e2;
+        284 +              color: #991b1b;
+        285 +          }
+        286 +          
+        287 +          .badge-info {
+        288 +              background: #dbeafe;
+        289 +              color: #1e40af;
+        290 +          }
+        291 +          
+        292 +          .hidden {
+        293 +              display: none;
+        294 +          }
+        295 +          
+        296 +          .flex {
+        297 +              display: flex;
+        298 +          }
+        299 +          
+        300 +          .justify-between {
+        301 +              justify-content: space-between;
+        302 +          }
+        303 +          
+        304 +          .items-center {
+        305 +              align-items: center;
+        306 +          }
+        307 +          
+        308 +          .gap-2 {
+        309 +              gap: 0.5rem;
+        310 +          }
+        311 +          
+        312 +          .modal {
+        313 +              position: fixed;
+        314 +              top: 0;
+        315 +              left: 0;
+        316 +              right: 0;
+        317 +              bottom: 0;
+        318 +              background: rgba(0,0,0,0.5);
+        319 +              display: none;
+        320 +              align-items: center;
+        321 +              justify-content: center;
+        322 +              z-index: 1000;
+        323 +          }
+        324 +          
+        325 +          .modal.show {
+        326 +              display: flex;
+        327 +          }
+        328 +          
+        329 +          .modal-content {
+        330 +              background: white;
+        331                border-radius: 0.5rem;
+        332 -              text-decoration: none;
+        332 +              padding: 2rem;
+        333 +              width: 90%;
+        334 +              max-width: 600px;
+        335 +              max-height: 90vh;
+        336 +              overflow-y: auto;
+        337 +          }
+        338 +          
+        339 +          .search-bar {
+        340 +              display: flex;
+        341 +              gap: 1rem;
+        342 +              margin-bottom: 1rem;
+        343 +          }
+        344 +          
+        345 +          .search-bar input {
+        346 +              flex: 1;
+        347 +          }
+        348 +          
+        349 +          .filter-bar {
+        350 +              display: flex;
+        351 +              gap: 1rem;
+        352 +              margin-bottom: 1rem;
+        353 +              flex-wrap: wrap;
+        354 +          }
+        355 +          
+        356 +          .product-image {
+        357 +              width: 50px;
+        358 +              height: 50px;
+        359 +              object-fit: cover;
+        360 +              border-radius: 0.25rem;
+        361 +              border: 1px solid #e2e8f0;
+        362 +          }
+        363 +          
+        364 +          .attribute-group {
+        365 +              border: 1px solid #e2e8f0;
+        366 +              border-radius: 0.375rem;
+        367 +              padding: 1rem;
+        368 +              margin-bottom: 1rem;
+        369 +          }
+        370 +          
+        371 +          .attribute-title {
+        372                font-weight: 600;
+        373 -              margin: 1rem;
+        374 -              transition: transform 0.3s ease;
+        373 +              margin-bottom: 0.5rem;
+        374 +              color: #374151;
+        375            }
+        376            
+        377 -          .demo-link:hover {
+        378 -              transform: scale(1.05);
+        377 +          .grid-2 {
+        378 +              display: grid;
+        379 +              grid-template-columns: repeat(2, 1fr);
+        380 +              gap: 1rem;
+        381            }
+        382 +          
+        383 +          .grid-3 {
+        384 +              display: grid;
+        385 +              grid-template-columns: repeat(3, 1fr);
+        386 +              gap: 1rem;
+        387 +          }
+        388        </style>
+        389    </head>
+        390    <body>
+        391 -      <div class="container">
+        392 -          <div class="hero">
+        393 -              <div class="logo">🚗</div>
+        394 -              <h1>Automotive PIM + DAM</h1>
+        395 -              <p class="subtitle">High-End Product Information Management & Digital Asset Management System mit 
+            - KI-Features</p>
+        396 -              <div class="status">✅ System Ready - Erste Version verfügbar</div>
+        391 +      <!-- Header -->
+        392 +      <div class="header">
+        393 +          <div class="logo">
+        394 +              🚗 Automotive PIM System
+        395            </div>
+        396            
+        397 -          <div class="features">
+        398 -              <div class="feature-card">
+        399 -                  <div class="feature-icon">🤖</div>
+        400 -                  <h3 class="feature-title">KI-Powered Features</h3>
+        401 -                  <p>Automatische Datenbereinigung, Layout-Generierung und intelligente Export-Funktionen mit OpenAI & 
+            - Anthropic Integration</p>
+        397 +          <div class="nav-tabs">
+        398 +              <button class="nav-tab active" onclick="showTab('dashboard')">Dashboard</button>
+        399 +              <button class="nav-tab" onclick="showTab('products')">Produkte</button>
+        400 +              <button class="nav-tab" onclick="showTab('import')">Import</button>
+        401 +              <button class="nav-tab" onclick="showTab('export')">Export</button>
+        402 +              <button class="nav-tab" onclick="showTab('reports')">Berichte</button>
+        403 +          </div>
+        404 +          
+        405 +          <div class="user-menu">
+        406 +              <span>Admin User</span>
+        407 +              <button class="btn btn-sm">⚙️</button>
+        408 +          </div>
+        409 +      </div>
+        410 +  
+        411 +      <div class="main-content">
+        412 +          <!-- Sidebar -->
+        413 +          <div class="sidebar">
+        414 +              <ul class="sidebar-menu">
+        415 +                  <li><a href="#" class="active" onclick="showSection('overview')">📊 Übersicht</a></li>
+        416 +                  <li><a href="#" onclick="showSection('products')">📦 Produktkatalog</a></li>
+        417 +                  <li><a href="#" onclick="showSection('categories')">🏷️ Kategorien</a></li>
+        418 +                  <li><a href="#" onclick="showSection('attributes')">🔧 Attribute</a></li>
+        419 +                  <li><a href="#" onclick="showSection('brands')">🏢 Marken</a></li>
+        420 +                  <li><a href="#" onclick="showSection('suppliers')">🤝 Lieferanten</a></li>
+        421 +                  <li><a href="#" onclick="showSection('workflows')">⚡ Workflows</a></li>
+        422 +                  <li><a href="#" onclick="showSection('ai-tools')">🤖 KI-Tools</a></li>
+        423 +              </ul>
+        424 +          </div>
+        425 +  
+        426 +          <!-- Main Content Area -->
+        427 +          <div class="content-area">
+        428 +              <!-- Dashboard Tab -->
+        429 +              <div id="dashboard-tab">
+        430 +                  <div class="page-header">
+        431 +                      <h1 class="page-title">Dashboard</h1>
+        432 +                      <button class="btn btn-primary" onclick="openModal('import-modal')">+ Daten importieren</button>
+        433 +                  </div>
+        434 +  
+        435 +                  <!-- Stats Overview -->
+        436 +                  <div class="stats-grid">
+        437 +                      <div class="stat-card">
+        438 +                          <div class="stat-number">12,847</div>
+        439 +                          <div class="stat-label">Produkte gesamt</div>
+        440 +                      </div>
+        441 +                      <div class="stat-card">
+        442 +                          <div class="stat-number">2,156</div>
+        443 +                          <div class="stat-label">Aktive Artikel</div>
+        444 +                      </div>
+        445 +                      <div class="stat-card">
+        446 +                          <div class="stat-number">456</div>
+        447 +                          <div class="stat-label">Kategorien</div>
+        448 +                      </div>
+        449 +                      <div class="stat-card">
+        450 +                          <div class="stat-number">89</div>
+        451 +                          <div class="stat-label">Marken</div>
+        452 +                      </div>
+        453 +                  </div>
+        454 +  
+        455 +                  <!-- Recent Products -->
+        456 +                  <div class="card">
+        457 +                      <div class="card-header">
+        458 +                          <h2 class="card-title">Neueste Produkte</h2>
+        459 +                          <button class="btn btn-primary" onclick="openModal('product-modal')">+ Neues Produkt</button>
+        460 +                      </div>
+        461 +                      <div class="card-body">
+        462 +                          <table class="table">
+        463 +                              <thead>
+        464 +                                  <tr>
+        465 +                                      <th>Bild</th>
+        466 +                                      <th>Artikelnummer</th>
+        467 +                                      <th>Produktname</th>
+        468 +                                      <th>Kategorie</th>
+        469 +                                      <th>Marke</th>
+        470 +                                      <th>Status</th>
+        471 +                                      <th>Aktionen</th>
+        472 +                                  </tr>
+        473 +                              </thead>
+        474 +                              <tbody id="products-table">
+        475 +                                  <tr>
+        476 +                                      <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' 
+            + height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' 
+            + dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3E🔧%3C/text%3E%3C/svg%3E" class="product-image" 
+            + alt="Bremsscheibe"></td>
+        477 +                                      <td><strong>BRS-001-2024</strong></td>
+        478 +                                      <td>Bremsscheibe vorne BMW E90</td>
+        479 +                                      <td>Bremssystem</td>
+        480 +                                      <td>ATE</td>
+        481 +                                      <td><span class="badge badge-success">Aktiv</span></td>
+        482 +                                      <td>
+        483 +                                          <button class="btn btn-sm" onclick="editProduct('BRS-001-2024')">✏️</button>
+        484 +                                          <button class="btn btn-sm">👁️</button>
+        485 +                                      </td>
+        486 +                                  </tr>
+        487 +                                  <tr>
+        488 +                                      <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' 
+            + height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' 
+            + dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3E⚙️%3C/text%3E%3C/svg%3E" class="product-image" 
+            + alt="Ölfilter"></td>
+        489 +                                      <td><strong>OIL-456-2024</strong></td>
+        490 +                                      <td>Ölfilter Audi A4 B8</td>
+        491 +                                      <td>Motorteile</td>
+        492 +                                      <td>Mann+Hummel</td>
+        493 +                                      <td><span class="badge badge-warning">Entwurf</span></td>
+        494 +                                      <td>
+        495 +                                          <button class="btn btn-sm" onclick="editProduct('OIL-456-2024')">✏️</button>
+        496 +                                          <button class="btn btn-sm">👁️</button>
+        497 +                                      </td>
+        498 +                                  </tr>
+        499 +                                  <tr>
+        500 +                                      <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' 
+            + height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' 
+            + dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3E🔋%3C/text%3E%3C/svg%3E" class="product-image" 
+            + alt="Batterie"></td>
+        501 +                                      <td><strong>BAT-789-2024</strong></td>
+        502 +                                      <td>Starterbatterie 12V 70Ah</td>
+        503 +                                      <td>Elektrik</td>
+        504 +                                      <td>Varta</td>
+        505 +                                      <td><span class="badge badge-success">Aktiv</span></td>
+        506 +                                      <td>
+        507 +                                          <button class="btn btn-sm" onclick="editProduct('BAT-789-2024')">✏️</button>
+        508 +                                          <button class="btn btn-sm">👁️</button>
+        509 +                                      </td>
+        510 +                                  </tr>
+        511 +                              </tbody>
+        512 +                          </table>
+        513 +                      </div>
+        514 +                  </div>
+        515                </div>
+        516 -              
+        517 -              <div class="feature-card">
+        518 -                  <div class="feature-icon">📊</div>
+        519 -                  <h3 class="feature-title">Product Information Management</h3>
+        520 -                  <p>Vollständige Verwaltung von Automotive-Produktdaten mit TecDoc, ACES/PIES Integration und Multi-Language 
+            - Support</p>
+        516 +  
+        517 +              <!-- Products Tab -->
+        518 +              <div id="products-tab" class="hidden">
+        519 +                  <div class="page-header">
+        520 +                      <h1 class="page-title">Produktkatalog</h1>
+        521 +                      <button class="btn btn-primary" onclick="openModal('product-modal')">+ Neues Produkt</button>
+        522 +                  </div>
+        523 +  
+        524 +                  <!-- Search and Filter -->
+        525 +                  <div class="card">
+        526 +                      <div class="card-body">
+        527 +                          <div class="search-bar">
+        528 +                              <input type="text" class="form-input" placeholder="Suche nach Artikelnummer, Name oder Marke..."
+            +  id="product-search">
+        529 +                              <button class="btn btn-primary">🔍 Suchen</button>
+        530 +                          </div>
+        531 +                          
+        532 +                          <div class="filter-bar">
+        533 +                              <select class="form-select">
+        534 +                                  <option>Alle Kategorien</option>
+        535 +                                  <option>Bremssystem</option>
+        536 +                                  <option>Motorteile</option>
+        537 +                                  <option>Elektrik</option>
+        538 +                                  <option>Fahrwerk</option>
+        539 +                              </select>
+        540 +                              <select class="form-select">
+        541 +                                  <option>Alle Marken</option>
+        542 +                                  <option>ATE</option>
+        543 +                                  <option>Mann+Hummel</option>
+        544 +                                  <option>Varta</option>
+        545 +                                  <option>Sachs</option>
+        546 +                              </select>
+        547 +                              <select class="form-select">
+        548 +                                  <option>Alle Status</option>
+        549 +                                  <option>Aktiv</option>
+        550 +                                  <option>Entwurf</option>
+        551 +                                  <option>Archiviert</option>
+        552 +                              </select>
+        553 +                              <button class="btn">Filter zurücksetzen</button>
+        554 +                          </div>
+        555 +                      </div>
+        556 +                  </div>
+        557 +  
+        558 +                  <!-- Products Table -->
+        559 +                  <div class="card">
+        560 +                      <div class="card-body">
+        561 +                          <table class="table">
+        562 +                              <thead>
+        563 +                                  <tr>
+        564 +                                      <th><input type="checkbox" onclick="toggleSelectAll()"></th>
+        565 +                                      <th>Bild</th>
+        566 +                                      <th>Artikelnummer ↕</th>
+        567 +                                      <th>Produktname ↕</th>
+        568 +                                      <th>Kategorie</th>
+        569 +                                      <th>Marke</th>
+        570 +                                      <th>Preis</th>
+        571 +                                      <th>Bestand</th>
+        572 +                                      <th>Status</th>
+        573 +                                      <th>Zuletzt geändert</th>
+        574 +                                      <th>Aktionen</th>
+        575 +                                  </tr>
+        576 +                              </thead>
+        577 +                              <tbody>
+        578 +                                  <tr>
+        579 +                                      <td><input type="checkbox" class="product-checkbox"></td>
+        580 +                                      <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' 
+            + height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' 
+            + dominant-baseline='middle' text-anchor='middle' fill='%2364748b'%3E🔧%3C/text%3E%3C/svg%3E" class="product-image"></td>
+        581 +                                      <td><strong>BRS-001-2024</strong></td>
+        582 +                                      <td>Bremsscheibe vorne BMW E90 318i</td>
+        583 +                                      <td>Bremssystem</td>
+        584 +                                      <td>ATE</td>
+        585 +                                      <td>89,99 €</td>
+        586 +                                      <td><span class="badge badge-success">Verfügbar</span></td>
+        587 +                                      <td><span class="badge badge-success">Aktiv</span></td>
+        588 +                                      <td>2024-01-15</td>
+        589 +                                      <td>
+        590 +                                          <button class="btn btn-sm" onclick="editProduct('BRS-001-2024')">✏️</button>
+        591 +                                          <button class="btn btn-sm" onclick="duplicateProduct('BRS-001-2024')">📋</button>
+        592 +                                          <button class="btn btn-sm">👁️</button>
+        593 +                                      </td>
+        594 +                                  </tr>
+        595 +                                  <!-- Mehr Produktzeilen würden hier folgen -->
+        596 +                              </tbody>
+        597 +                          </table>
+        598 +                      </div>
+        599 +                  </div>
+        600                </div>
+        601 +  
+        602 +              <!-- Import Tab -->
+        603 +              <div id="import-tab" class="hidden">
+        604 +                  <div class="page-header">
+        605 +                      <h1 class="page-title">Daten Import</h1>
+        606 +                  </div>
+        607 +  
+        608 +                  <div class="card">
+        609 +                      <div class="card-header">
+        610 +                          <h2 class="card-title">📤 Produktdaten importieren</h2>
+        611 +                      </div>
+        612 +                      <div class="card-body">
+        613 +                          <div class="form-group">
+        614 +                              <label class="form-label">Import-Typ auswählen:</label>
+        615 +                              <select class="form-select" id="import-type">
+        616 +                                  <option>Excel/CSV Datei</option>
+        617 +                                  <option>TecDoc XML</option>
+        618 +                                  <option>ACES/PIES Format</option>
+        619 +                                  <option>Lieferanten API</option>
+        620 +                              </select>
+        621 +                          </div>
+        622 +                          
+        623 +                          <div class="form-group">
+        624 +                              <label class="form-label">Datei auswählen:</label>
+        625 +                              <input type="file" class="form-input" accept=".csv,.xlsx,.xml">
+        626 +                          </div>
+        627 +                          
+        628 +                          <div class="form-group">
+        629 +                              <label class="form-label">Import-Optionen:</label>
+        630 +                              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        631 +                                  <label><input type="checkbox" checked> Duplikate überspringen</label>
+        632 +                                  <label><input type="checkbox"> Bestehende Daten überschreiben</label>
+        633 +                                  <label><input type="checkbox" checked> Validierung durchführen</label>
+        634 +                                  <label><input type="checkbox"> KI-Datenbereinigung aktivieren</label>
+        635 +                              </div>
+        636 +                          </div>
+        637 +                          
+        638 +                          <button class="btn btn-primary">📥 Import starten</button>
+        639 +                          <button class="btn">📋 Vorlage herunterladen</button>
+        640 +                      </div>
+        641 +                  </div>
+        642 +  
+        643 +                  <!-- Import History -->
+        644 +                  <div class="card">
+        645 +                      <div class="card-header">
+        646 +                          <h2 class="card-title">Import-Verlauf</h2>
+        647 +                      </div>
+        648 +                      <div class="card-body">
+        649 +                          <table class="table">
+        650 +                              <thead>
+        651 +                                  <tr>
+        652 +                                      <th>Datum</th>
+        653 +                                      <th>Datei</th>
+        654 +                                      <th>Typ</th>
+        655 +                                      <th>Datensätze</th>
+        656 +                                      <th>Status</th>
+        657 +                                      <th>Aktionen</th>
+        658 +                                  </tr>
+        659 +                              </thead>
+        660 +                              <tbody>
+        661 +                                  <tr>
+        662 +                                      <td>2024-01-15 14:30</td>
+        663 +                                      <td>produktdaten_q1_2024.xlsx</td>
+        664 +                                      <td>Excel</td>
+        665 +                                      <td>2,456 / 2,500</td>
+        666 +                                      <td><span class="badge badge-success">Erfolgreich</span></td>
+        667 +                                      <td>
+        668 +                                          <button class="btn btn-sm">📄 Bericht</button>
+        669 +                                          <button class="btn btn-sm">🔄 Wiederholen</button>
+        670 +                                      </td>
+        671 +                                  </tr>
+        672 +                                  <tr>
+        673 +                                      <td>2024-01-14 09:15</td>
+        674 +                                      <td>tecdoc_update.xml</td>
+        675 +                                      <td>TecDoc</td>
+        676 +                                      <td>890 / 1,000</td>
+        677 +                                      <td><span class="badge badge-warning">Mit Fehlern</span></td>
+        678 +                                      <td>
+        679 +                                          <button class="btn btn-sm">📄 Bericht</button>
+        680 +                                          <button class="btn btn-sm">🔄 Wiederholen</button>
+        681 +                                      </td>
+        682 +                                  </tr>
+        683 +                              </tbody>
+        684 +                          </table>
+        685 +                      </div>
+        686 +                  </div>
+        687 +              </div>
+        688 +  
+        689 +              <!-- Export Tab -->
+        690 +              <div id="export-tab" class="hidden">
+        691 +                  <div class="page-header">
+        692 +                      <h1 class="page-title">Daten Export</h1>
+        693 +                  </div>
+        694 +  
+        695 +                  <div class="card">
+        696 +                      <div class="card-header">
+        697 +                          <h2 class="card-title">📤 Export konfigurieren</h2>
+        698 +                      </div>
+        699 +                      <div class="card-body">
+        700 +                          <div class="grid-2">
+        701 +                              <div class="form-group">
+        702 +                                  <label class="form-label">Export-Format:</label>
+        703 +                                  <select class="form-select">
+        704 +                                      <option>Excel (.xlsx)</option>
+        705 +                                      <option>CSV (.csv)</option>
+        706 +                                      <option>TecDoc XML</option>
+        707 +                                      <option>ACES/PIES</option>
+        708 +                                      <option>Magento CSV</option>
+        709 +                                      <option>JSON API</option>
+        710 +                                  </select>
+        711 +                              </div>
+        712 +                              
+        713 +                              <div class="form-group">
+        714 +                                  <label class="form-label">Produktfilter:</label>
+        715 +                                  <select class="form-select">
+        716 +                                      <option>Alle Produkte</option>
+        717 +                                      <option>Nur aktive Produkte</option>
+        718 +                                      <option>Nach Kategorie</option>
+        719 +                                      <option>Nach Marke</option>
+        720 +                                      <option>Eigene Auswahl</option>
+        721 +                                  </select>
+        722 +                              </div>
+        723 +                          </div>
+        724 +                          
+        725 +                          <div class="form-group">
+        726 +                              <label class="form-label">Zu exportierende Felder:</label>
+        727 +                              <div class="grid-3">
+        728 +                                  <label><input type="checkbox" checked> Artikelnummer</label>
+        729 +                                  <label><input type="checkbox" checked> Produktname</label>
+        730 +                                  <label><input type="checkbox" checked> Beschreibung</label>
+        731 +                                  <label><input type="checkbox" checked> Kategorie</label>
+        732 +                                  <label><input type="checkbox" checked> Marke</label>
+        733 +                                  <label><input type="checkbox" checked> Preis</label>
+        734 +                                  <label><input type="checkbox"> Technische Daten</label>
+        735 +                                  <label><input type="checkbox"> Kompatibilität</label>
+        736 +                                  <label><input type="checkbox"> Bilder URLs</label>
+        737 +                              </div>
+        738 +                          </div>
+        739 +                          
+        740 +                          <button class="btn btn-primary">📥 Export starten</button>
+        741 +                          <button class="btn">🤖 KI-Export (Prompt)</button>
+        742 +                      </div>
+        743 +                  </div>
+        744 +              </div>
+        745 +  
+        746 +              <!-- Reports Tab -->
+        747 +              <div id="reports-tab" class="hidden">
+        748 +                  <div class="page-header">
+        749 +                      <h1 class="page-title">Berichte & Analytics</h1>
+        750 +                  </div>
+        751 +  
+        752 +                  <div class="stats-grid">
+        753 +                      <div class="stat-card">
+        754 +                          <div class="stat-number">98.2%</div>
+        755 +                          <div class="stat-label">Datenqualität</div>
+        756 +                      </div>
+        757 +                      <div class="stat-card">
+        758 +                          <div class="stat-number">156</div>
+        759 +                          <div class="stat-label">Fehlende Bilder</div>
+        760 +                      </div>
+        761 +                      <div class="stat-card">
+        762 +                          <div class="stat-number">89</div>
+        763 +                          <div class="stat-label">Unvollständige Artikel</div>
+        764 +                      </div>
+        765 +                      <div class="stat-card">
+        766 +                          <div class="stat-number">12</div>
+        767 +                          <div class="stat-label">Duplicate SKUs</div>
+        768 +                      </div>
+        769 +                  </div>
+        770 +  
+        771 +                  <div class="card">
+        772 +                      <div class="card-header">
+        773 +                          <h2 class="card-title">📊 Datenqualitäts-Bericht</h2>
+        774 +                      </div>
+        775 +                      <div class="card-body">
+        776 +                          <p>Automatische Analyse der Produktdaten-Qualität und Empfehlungen zur Verbesserung.</p>
+        777 +                          <button class="btn btn-primary">🤖 KI-Analyse starten</button>
+        778 +                      </div>
+        779 +                  </div>
+        780 +              </div>
+        781 +          </div>
+        782 +      </div>
+        783 +  
+        784 +      <!-- Product Modal -->
+        785 +      <div id="product-modal" class="modal">
+        786 +          <div class="modal-content">
+        787 +              <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+        788 +                  <h2>Neues Produkt erstellen</h2>
+        789 +                  <button onclick="closeModal('product-modal')" style="border: none; background: none; font-size: 1.5rem; 
+            + cursor: pointer;">×</button>
+        790 +              </div>
+        791                
+        792 -              <div class="feature-card">
+        793 -                  <div class="feature-icon">🎨</div>
+        794 -                  <h3 class="feature-title">Digital Asset Management</h3>
+        795 -                  <p>Moderne Asset-Verwaltung mit automatischer Kategorisierung, Brand Board Integration und 
+            - Layout-Generator</p>
+        792 +              <form id="product-form">
+        793 +                  <!-- Grunddaten -->
+        794 +                  <div class="attribute-group">
+        795 +                      <h3 class="attribute-title">📝 Grunddaten</h3>
+        796 +                      <div class="grid-2">
+        797 +                          <div class="form-group">
+        798 +                              <label class="form-label">Artikelnummer *</label>
+        799 +                              <input type="text" class="form-input" required placeholder="z.B. BRS-001-2024">
+        800 +                          </div>
+        801 +                          <div class="form-group">
+        802 +                              <label class="form-label">Produktname *</label>
+        803 +                              <input type="text" class="form-input" required placeholder="z.B. Bremsscheibe vorne">
+        804 +                          </div>
+        805 +                          <div class="form-group">
+        806 +                              <label class="form-label">Kategorie *</label>
+        807 +                              <select class="form-select" required>
+        808 +                                  <option value="">Kategorie wählen</option>
+        809 +                                  <option>Bremssystem</option>
+        810 +                                  <option>Motorteile</option>
+        811 +                                  <option>Elektrik</option>
+        812 +                                  <option>Fahrwerk</option>
+        813 +                              </select>
+        814 +                          </div>
+        815 +                          <div class="form-group">
+        816 +                              <label class="form-label">Marke *</label>
+        817 +                              <select class="form-select" required>
+        818 +                                  <option value="">Marke wählen</option>
+        819 +                                  <option>ATE</option>
+        820 +                                  <option>Mann+Hummel</option>
+        821 +                                  <option>Varta</option>
+        822 +                                  <option>Sachs</option>
+        823 +                              </select>
+        824 +                          </div>
+        825 +                      </div>
+        826 +                      <div class="form-group">
+        827 +                          <label class="form-label">Beschreibung</label>
+        828 +                          <textarea class="form-input" rows="3" placeholder="Produktbeschreibung..."></textarea>
+        829 +                      </div>
+        830 +                  </div>
+        831 +  
+        832 +                  <!-- Technische Daten -->
+        833 +                  <div class="attribute-group">
+        834 +                      <h3 class="attribute-title">🔧 Technische Daten</h3>
+        835 +                      <div class="grid-2">
+        836 +                          <div class="form-group">
+        837 +                              <label class="form-label">Gewicht (kg)</label>
+        838 +                              <input type="number" class="form-input" step="0.01" placeholder="z.B. 1.25">
+        839 +                          </div>
+        840 +                          <div class="form-group">
+        841 +                              <label class="form-label">Durchmesser (mm)</label>
+        842 +                              <input type="number" class="form-input" placeholder="z.B. 280">
+        843 +                          </div>
+        844 +                          <div class="form-group">
+        845 +                              <label class="form-label">Dicke (mm)</label>
+        846 +                              <input type="number" class="form-input" step="0.1" placeholder="z.B. 22.0">
+        847 +                          </div>
+        848 +                          <div class="form-group">
+        849 +                              <label class="form-label">Material</label>
+        850 +                              <input type="text" class="form-input" placeholder="z.B. Grauguss">
+        851 +                          </div>
+        852 +                      </div>
+        853 +                  </div>
+        854 +  
+        855 +                  <!-- Preise & Verfügbarkeit -->
+        856 +                  <div class="attribute-group">
+        857 +                      <h3 class="attribute-title">💰 Preise & Verfügbarkeit</h3>
+        858 +                      <div class="grid-2">
+        859 +                          <div class="form-group">
+        860 +                              <label class="form-label">Einkaufspreis (€)</label>
+        861 +                              <input type="number" class="form-input" step="0.01" placeholder="z.B. 45.50">
+        862 +                          </div>
+        863 +                          <div class="form-group">
+        864 +                              <label class="form-label">Verkaufspreis (€)</label>
+        865 +                              <input type="number" class="form-input" step="0.01" placeholder="z.B. 89.99">
+        866 +                          </div>
+        867 +                          <div class="form-group">
+        868 +                              <label class="form-label">Lagerbestand</label>
+        869 +                              <input type="number" class="form-input" placeholder="z.B. 50">
+        870 +                          </div>
+        871 +                          <div class="form-group">
+        872 +                              <label class="form-label">Mindestbestand</label>
+        873 +                              <input type="number" class="form-input" placeholder="z.B. 10">
+        874 +                          </div>
+        875 +                      </div>
+        876 +                  </div>
+        877 +  
+        878 +                  <!-- Fahrzeugkompatibilität -->
+        879 +                  <div class="attribute-group">
+        880 +                      <h3 class="attribute-title">🚗 Fahrzeugkompatibilität</h3>
+        881 +                      <div class="grid-2">
+        882 +                          <div class="form-group">
+        883 +                              <label class="form-label">Hersteller</label>
+        884 +                              <select class="form-select">
+        885 +                                  <option>BMW</option>
+        886 +                                  <option>Mercedes</option>
+        887 +                                  <option>Audi</option>
+        888 +                                  <option>VW</option>
+        889 +                              </select>
+        890 +                          </div>
+        891 +                          <div class="form-group">
+        892 +                              <label class="form-label">Modell</label>
+        893 +                              <input type="text" class="form-input" placeholder="z.B. 3er E90">
+        894 +                          </div>
+        895 +                          <div class="form-group">
+        896 +                              <label class="form-label">Baujahr von</label>
+        897 +                              <input type="number" class="form-input" placeholder="z.B. 2005">
+        898 +                          </div>
+        899 +                          <div class="form-group">
+        900 +                              <label class="form-label">Baujahr bis</label>
+        901 +                              <input type="number" class="form-input" placeholder="z.B. 2012">
+        902 +                          </div>
+        903 +                      </div>
+        904 +                  </div>
+        905 +  
+        906 +                  <div class="flex justify-between" style="margin-top: 2rem;">
+        907 +                      <button type="button" class="btn" onclick="closeModal('product-modal')">Abbrechen</button>
+        908 +                      <div class="flex gap-2">
+        909 +                          <button type="submit" class="btn">Als Entwurf speichern</button>
+        910 +                          <button type="submit" class="btn btn-primary">Speichern & Aktivieren</button>
+        911 +                      </div>
+        912 +                  </div>
+        913 +              </form>
+        914 +          </div>
+        915 +      </div>
+        916 +  
+        917 +      <!-- Import Modal -->
+        918 +      <div id="import-modal" class="modal">
+        919 +          <div class="modal-content">
+        920 +              <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+        921 +                  <h2>📤 Schnell-Import</h2>
+        922 +                  <button onclick="closeModal('import-modal')" style="border: none; background: none; font-size: 1.5rem; 
+            + cursor: pointer;">×</button>
+        923                </div>
+        924                
+        925 -              <div class="feature-card">
+        926 -                  <div class="feature-icon">⚡</div>
+        927 -                  <h3 class="feature-title">Workflow Automation</h3>
+        928 -                  <p>Intelligente Workflows für Import, Approval-Prozesse und Export-Automation mit Task-Management</p>
+        925 +              <div class="form-group">
+        926 +                  <label class="form-label">Datei auswählen:</label>
+        927 +                  <input type="file" class="form-input" accept=".csv,.xlsx,.xml">
+        928                </div>
+        929                
+        930 -              <div class="feature-card">
+        931 -                  <div class="feature-icon">🔧</div>
+        932 -                  <h3 class="feature-title">Enterprise Architecture</h3>
+        933 -                  <p>Microservices mit NestJS, React Frontend, PostgreSQL, Redis, MinIO und Docker-basierte Deployment</p>
+        930 +              <div class="form-group">
+        931 +                  <label><input type="checkbox" checked> KI-Datenbereinigung aktivieren</label>
+        932                </div>
+        933                
+        934 -              <div class="feature-card">
+        935 -                  <div class="feature-icon">📈</div>
+        936 -                  <h3 class="feature-title">Analytics & Monitoring</h3>
+        937 -                  <p>Integrierte Prometheus/Grafana Monitoring, Audit Logs und Performance Analytics</p>
+        934 +              <div class="flex justify-between" style="margin-top: 2rem;">
+        935 +                  <button type="button" class="btn" onclick="closeModal('import-modal')">Abbrechen</button>
+        936 +                  <button type="button" class="btn btn-primary">Import starten</button>
+        937                </div>
+        938            </div>
+        939 -          
+        940 -          <div class="tech-stack">
+        941 -              <h2>🛠️ Tech Stack</h2>
+        942 -              <div class="tech-grid">
+        943 -                  <div class="tech-item"><strong>Frontend:</strong> React + Next.js 14</div>
+        944 -                  <div class="tech-item"><strong>Backend:</strong> NestJS + TypeScript</div>
+        945 -                  <div class="tech-item"><strong>Database:</strong> PostgreSQL + Prisma</div>
+        946 -                  <div class="tech-item"><strong>AI Services:</strong> Python FastAPI</div>
+        947 -                  <div class="tech-item"><strong>Cache:</strong> Redis</div>
+        948 -                  <div class="tech-item"><strong>Storage:</strong> MinIO (S3-compatible)</div>
+        949 -                  <div class="tech-item"><strong>Search:</strong> Elasticsearch</div>
+        950 -                  <div class="tech-item"><strong>Deployment:</strong> Docker + Compose</div>
+        951 -                  <div class="tech-item"><strong>Monitoring:</strong> Prometheus + Grafana</div>
+        952 -                  <div class="tech-item"><strong>UI:</strong> Tailwind + shadcn/ui</div>
+        953 -                  <div class="tech-item"><strong>AI:</strong> OpenAI + Anthropic</div>
+        954 -                  <div class="tech-item"><strong>Auth:</strong> JWT + RBAC</div>
+        955 -              </div>
+        956 -          </div>
+        957 -          
+        958 -          <div style="margin-top: 3rem;">
+        959 -              <h2>🚀 Quick Start</h2>
+        960 -              <p style="margin: 1rem 0; opacity: 0.9;">
+        961 -                  Das System ist production-ready und kann sofort deployed werden. Alle Services sind containerisiert und über
+            -  Docker Compose verfügbar.
+        962 -              </p>
+        963 -              
+        964 -              <a href="#" class="github-link">📱 Live Demo starten</a>
+        965 -              <a href="#" class="demo-link">⚙️ Installation Guide</a>
+        966 -          </div>
+        967 -          
+        968 -          <div style="margin-top: 3rem; opacity: 0.7;">
+        969 -              <p>Entwickelt mit ❤️ für die Automotive-Industrie | Powered by Claude AI</p>
+        970 -          </div>
+        939        </div>
+        940 -      
+        940 +  
+        941        <script>
+        942 -          // Add some interactivity
+        943 -          document.querySelectorAll('.feature-card').forEach(card => {
+        944 -              card.addEventListener('mouseenter', () => {
+        945 -                  card.style.background = 'rgba(255, 255, 255, 0.15)';
+        942 +          // Tab switching
+        943 +          function showTab(tabName) {
+        944 +              // Hide all tabs
+        945 +              document.querySelectorAll('[id$="-tab"]').forEach(tab => {
+        946 +                  tab.classList.add('hidden');
+        947                });
+        948                
+        949 -              card.addEventListener('mouseleave', () => {
+        950 -                  card.style.background = 'rgba(255, 255, 255, 0.1)';
+        949 +              // Show selected tab
+        950 +              document.getElementById(tabName + '-tab').classList.remove('hidden');
+        951 +              
+        952 +              // Update nav buttons
+        953 +              document.querySelectorAll('.nav-tab').forEach(btn => {
+        954 +                  btn.classList.remove('active');
+        955                });
+        956 +              event.target.classList.add('active');
+        957 +          }
+        958 +  
+        959 +          // Section switching (sidebar)
+        960 +          function showSection(sectionName) {
+        961 +              // Update sidebar menu
+        962 +              document.querySelectorAll('.sidebar-menu a').forEach(link => {
+        963 +                  link.classList.remove('active');
+        964 +              });
+        965 +              event.target.classList.add('active');
+        966 +              
+        967 +              // Here you would show different content based on section
+        968 +              console.log('Show section:', sectionName);
+        969 +          }
+        970 +  
+        971 +          // Modal functions
+        972 +          function openModal(modalId) {
+        973 +              document.getElementById(modalId).classList.add('show');
+        974 +          }
+        975 +  
+        976 +          function closeModal(modalId) {
+        977 +              document.getElementById(modalId).classList.remove('show');
+        978 +          }
+        979 +  
+        980 +          // Product functions
+        981 +          function editProduct(sku) {
+        982 +              openModal('product-modal');
+        983 +              // Here you would load the product data
+        984 +              console.log('Edit product:', sku);
+        985 +          }
+        986 +  
+        987 +          function duplicateProduct(sku) {
+        988 +              // Logic to duplicate product
+        989 +              console.log('Duplicate product:', sku);
+        990 +          }
+        991 +  
+        992 +          // Table functions
+        993 +          function toggleSelectAll() {
+        994 +              const checkboxes = document.querySelectorAll('.product-checkbox');
+        995 +              const selectAll = event.target.checked;
+        996 +              checkboxes.forEach(cb => cb.checked = selectAll);
+        997 +          }
+        998 +  
+        999 +          // Form submission
+       1000 +          document.getElementById('product-form').addEventListener('submit', function(e) {
+       1001 +              e.preventDefault();
+       1002 +              alert('Produkt gespeichert! (Demo)');
+       1003 +              closeModal('product-modal');
+       1004            });
+       1005 -          
+       1006 -          // Status indicator animation
+       1007 -          const status = document.querySelector('.status');
+       1005 +  
+       1006 +          // Search functionality
+       1007 +          document.getElementById('product-search').addEventListener('input', function() {
+       1008 +              // Here you would implement real search
+       1009 +              console.log('Search:', this.value);
+       1010 +          });
+       1011 +  
+       1012 +          // Initialize with dashboard tab
+       1013 +          document.addEventListener('DOMContentLoaded', function() {
+       1014 +              showTab('dashboard');
+       1015 +          });
+       1016 +  
+       1017 +          // Demo: Add some interactivity
+       1018            setInterval(() => {
+       1019 -              status.style.opacity = status.style.opacity === '0.7' ? '1' : '0.7';
+       1020 -          }, 2000);
+       1019 +              const statNumbers = document.querySelectorAll('.stat-number');
+       1020 +              statNumbers.forEach(stat => {
+       1021 +                  if (Math.random() > 0.95) { // 5% chance every second
+       1022 +                      const currentValue = parseInt(stat.textContent.replace(/[,\.]/g, ''));
+       1023 +                      const newValue = currentValue + Math.floor(Math.random() * 10);
+       1024 +                      stat.textContent = newValue.toLocaleString();
+       1025 +                  }
+       1026 +              });
+       1027 +          }, 1000);
+       1028        </script>
+       1029    </body>
+       1030    </html>
         .container {
             max-width: 1200px;
             padding: 2rem;
